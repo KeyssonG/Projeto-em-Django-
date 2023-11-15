@@ -1,63 +1,74 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="pt=br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop Agile</title>
     <link rel="stylesheet" href="{% static '/styles/style.css' %}">
-    
 
 </head>
 <body>
-    
-    <header>
+    <header class="cabeçalho-flutuante"> 
         <h1>Shop Agile</h1>
-    </header>
+    </header> 
 
     <nav>
         <a href="#servicos">Serviços</a>
         <a href="#orcamento">Orçamento</a>
         <a href="#contatos">Contatos</a>
+        <a href="#topo" class="botao-home">Home</a>
     </nav>
 
     <section>
-        <h2>Bem-vindo à Casa do TI</h2>
-        <p>Na Casa do TI, oferecemos o que há de melhor no mercado de Tecnologia da Informação. Somos uma empresa recém-criada, mas apaixonada por inovação e excelência. Com uma equipe dedicada e mais de uma década de experiência acumulada, garantimos soluções tecnológicas de alta qualidade para clientes tanto pessoas físicas quanto jurídicas.</p>
+        <h2>Bem-vindo ao Shop Agile</h2>
+        <p>No Shop Agile, oferecemos o que há de melhor no mercado de Tecnologia da Informação. Somos uma empresa recém-criada, mas apaixonada por inovação e excelência. Com uma equipe dedicada e mais de uma década de experiência acumulada, garantimos soluções tecnológicas de alta qualidade para clientes tanto pessoas físicas quanto jurídicas.</p>
     </section>
 
     <section id="servicos">
         <h2>Serviços</h2>
         <ul>
             <li>1. Manutenção de Computadores em Geral</li>
-            <img src="" alt="">
+            <img src="{% static '/imagens/manutencao/manutencao1.jpg' %}" alt="" width="300" height="200">
+            <img src="{% static '/imagens/manutencao/manutencao2.jpg' %}" alt="" width="300" height="200">
+            <img src="{% static '/imagens/manutencao/manutencao3.jpg' %}" alt="" width="300" height="200">
+            <img src="{% static '/imagens/manutencao/manutencao4.jpg' %}" alt="" width="300" height="200">
+            <button onclick="prevImage()">Anterior</button>
+            <button onclick="nextImage()">Próximo</button>
+            
             <li>2. Venda de Peças</li>
             <li>3. Montagem de Computadores</li>
             <li>4. Manutenção de Video Games Antigos e de Última geração</li>
             <li>5. Manutenção de Celulares e Tablets</li>
         </ul>
-
-
+        
+        
     </section>
 
     <section id="orcamento">
         <h2>Orçamento</h2>
-        <p>entre em contato conosco para obter um orçamento personalizado para os serviços que você precisa.</p>
-
+        <p>Entre em contato conosco para obter um orçamento personalizado para os serviços que você precisa.</p>
     </section>
 
     <section id="contatos">
-
         <h2>Contatos</h2>
         <p>Estamos disponíveis para ajudar. Entre em contato através do e-mail: contato@casadoti.com ou pelo telefone: (99) 9999-9999.</p>
-
     </section>
 
     <footer>
         <p>&copy; 2023 Casa do TI. Todos os direitos reservados.</p>
     </footer>
-
-
+    
+    <script>
+        document.querySelector('.botao-home').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+    </script>
+    <script src="{% static 'scripts/scripts.js' %}"></script>
 </body>
 </html>
